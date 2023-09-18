@@ -1,8 +1,11 @@
 package Super;
 
+import java.io.IOException;
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Truck extends Vehicle{
+public class Truck extends Vehicle implements Serializable {
+    private static final long serialVersionUID = 1L;
     private String Type;
     private String ID;
     private Double fuel;
@@ -24,7 +27,7 @@ public class Truck extends Vehicle{
 
 
     @Override
-    public void loadContainer(Container container) {
+    public void loadContainer(Container container) throws IOException {
         containers.add(container);
         CapacityCal(this);
     }
